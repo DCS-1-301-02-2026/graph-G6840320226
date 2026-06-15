@@ -71,29 +71,27 @@ digraph {
 ```plantUML
 @startuml ex03
 left to right direction
-actor "学生" as student
-actor "教員" as teacher
+actor 学生 as student
+actor 教員 as teacher
+
 rectangle "GitHub Classroom" {
-  usecase "課題の登録" as uc8
-  usecase "課題の受領" as uc7
-  usecase "リポジトリのクローン" as uc6
-  usecase "課題ファイルの修正" as uc5
-  usecase "修正をステージに上げる" as uc4
-  usecase "修正のコミット" as uc3
-  usecase "リモートリポジトリにpush" as uc2
-  usecase "提出結果の採点" as uc1
+  usecase "課題の登録" as uc1
+  usecase "課題の受領" as uc2
+  usecase "リポジトリのクローン" as uc3
+  usecase "課題ファイルの修正" as uc4
+  usecase "修正をステージに上げる" as uc5
+  usecase "修正のコミット" as uc6
+  usecase "リモートリポジトリにpush" as uc7
+  usecase "提出結果の採点" as uc8
   }
-student --> uc7
-student --> uc6
-student --> uc5
-student --> uc4
-student --> uc3
+uc1 <-- teacher
 student --> uc2
-
-teacher --> uc8
-teacher --> uc1
-
-
+student --> uc3
+student --> uc4
+student --> uc5
+student --> uc6
+student --> uc7
+uc8 <-- teacher
 @enduml
 ```
 
